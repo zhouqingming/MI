@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>小米商品详细</title>
+		<meta name="description" content="小米商城直营小米公司旗下所有产品" />
+		<meta name="keywords" content="小米,小米5s,红米Note4,小米MIX,小米商城" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="icon" href="img1/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<style type="text/css">
+			.daohang {
+				height: 40px;
+				width: 1366px;
+				font-size: 12px;
+				margin-left: -60px;
+				line-height: 40px;
+				background: #f5f5f5;
+			}
+			
+			.daohang a {
+				margin-right: 10px;
+			}
+			
+			.sep {
+				margin-right: 10px;
+			}
+			
+			#divProduct {
+				background: #fff;
+				padding-top: 40px;
+				padding-bottom: 50px;
+				min-width: 1226px;
+				height: 550px;
+			}
+			
+			.goods_left {
+				float: left;
+				margin-left: 50px;
+				width: 190px;
+				min-height: 550px;
+			}
+			
+			.goods_center {
+				float: left;
+				width: 482px;
+				min-height: 550px;
+			}
+			
+			.goods_right {
+				float: left;
+				width: 420px;
+				margin-left: 140px;
+				min-height: 550px;
+			}
+			
+			.goods_left ul {
+				list-style: none;
+				margin-left: -40px;
+			}
+			
+			.goods_left ul li {
+				height: 60px;
+				width: 60px;
+				margin-bottom: 20px;
+				padding: 4px;
+				border: 1px solid #e0e0e0;
+			}
+			
+			#goods_name {
+				display: block;
+				height: 38px;
+				font-size: 28px;
+				font-weight: bold;
+				line-height: 38px;
+			}
+			
+			#good_deali {
+				display: block;
+				height: 23px;
+				color: #616161;
+				font-size: 14px;
+				line-height: 23px;
+			}
+			
+			#goods_price {
+				display: block;
+				height: 66px;
+				line-height: 66px;
+				font-weight: bold;
+				color: #ff6700;
+				font-size: 30px;
+				border-top: 1px solid #e0e0e0;
+				border-bottom: 1px solid #e0e0e0;
+			}
+			
+			#good_help {
+				height: 20px;
+				border-top: 1px solid #e0e0e0;
+				border-bottom: 1px solid #e0e0e0;
+				line-height: 20px;
+				padding-bottom: 20px;
+				overflow: hidden;
+				text-align: center;
+			}
+			
+			#good_help ul li {
+				border-right: 1px solid #e0e0e0;
+				float: left;
+				padding-right: 20px;
+				padding-left: 20px;
+			}
+			
+			#good_help ul {
+				height: 20px;
+				display: inline-block;
+				list-style: none;
+				margin-bottom: 10px;
+			}
+			
+			#product-bar {
+				height: 60px;
+				text-align: center;
+				line-height: 60px;
+				background-color: #FFFFFF;
+			}
+			
+			.detail-list {
+				margin-left: 300px;
+				list-style: none;
+			}
+			
+			.detail-list li {
+				float: left;
+				width: 170px;
+				height: 18px;
+				text-align: center;
+				font-size: 18px;
+				margin-top: 20px;
+				line-height: 18px;
+				display: block;
+				cursor: pointer;
+				border-right: 1px solid #e0e0e0;
+			}
+			
+			.TDSjiancebi {
+				margin: 0 auto;
+				height: 794px;
+				width: 1240px;
+			}
+		</style>
+	</head>
+
+	<body style="background-color: #F5F5F5;">
+		<div class="wrap">
+			<div class="container">
+				<div class="topnav">
+					<a href="#">小米商城</a><span>|</span>
+					<a href="#">MIUI</a> <span>|</span>
+					<a href="#">米聊</a> <span>|</span>
+					<a href="#">游戏</a> <span>|</span>
+					<a href="#">多看阅读</a> <span>|</span>
+					<a href="#">云服务</a> <span>|</span>
+					<a href="#">金融</a> <span>|</span>
+					<a href="#">小米网移动版</a> <span>|</span>
+					<a href="#">问题反馈</a> <span>|</span>
+					<a href="#">Select Region</a>
+				</div>
+				<div class="cart" id="cart">
+					<a class="mini" id="mini" href="#"><i class="iconfont">&#xe60c;</i>购物车<span>（0）</span></a>
+					<div class="menu" id="menu" style="display:none;">
+						<div class="loading">
+							<div class="loader"></div>
+						</div>
+					</div>
+				</div>
+				<div class="info" id="info">
+					<a href="#">登录</a> <span>|</span>
+					<a href="#">注册</a> <span>|</span> <span class="msg"><a href="#" >消息通知<i></i></a></span>
+				</div>
+			</div>
+		</div>
+		<div class="header" style="height: 100px;background-color: #FFFFFF;">
+			<div class="container">
+				<div class="headerlogo">
+					<svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
+						<rect width="50" height="50" style="fill:#ef5b00"></rect>
+						<rect x="11.25" y="15" width="5" height="20" style="fill:#FFFFFF"></rect>
+						<rect x="11.25" y="15" width="12.5" height="5" style="fill:#FFFFFF"></rect>
+						<rect x="26.25" y="22.5" width="5" height="12.5" style="fill:#FFFFFF"></rect>
+						<rect x="33.75" y="15" width="5" height="20" style="fill:#FFFFFF"></rect>
+						<circle cx="23.75" cy="22.5" r="7.5" fill="#FFFFFF"></circle>
+						<rect x="16.25" y="20" width="7.5" height="15" style="fill:#ef5b00"></rect>
+						<rect x="16.25" y="22.5" width="10" height="12.5" style="fill:#ef5b00"></rect>
+						<circle cx="23.75" cy="22.5" r="2.5" fill="#ef5b00"></circle>
+						<script src="js/jquery-1.11.3.min.js"></script>
+						<rect x="18.75" y="22.5" width="5" height="12.5" style="fill:#FFFFFF"></rect>
+					</svg>
+				</div>
+				<div class="mainnav">
+					<ul class="list clearfix">
+						<li id="navcate" class="navcate">
+							<a class="link-cate" href="#"><span>全部商品分类</span> </a>
+							<li class="nav-item">
+								<a class="link" href="#"><span>小米手机</span><span class="arrow"></span></a>
+							</li>
+							<li class="nav-item">
+								<a class="link" href="#"><span>红米</span><span class="arrow"></span></a>
+							</li>
+							<li class="nav-item">
+								<a class="link" href="#"><span>平板 · 笔记本</span><span></span></a>
+							</li>
+							<li class="nav-item">
+								<a class="link" href="#"> <span>电视</span><span></span></a>
+							</li>
+							<li class="nav-item">
+								<a class="link" href="#"> <span>盒子 · 影音</span><span></span></a>
+							</li>
+							<li class="nav-item">
+								<a class="link" href="#"> <span>路由器</span><span></span></a>
+							</li>
+							<li class="nav-item">
+								<a class="link" href="#"> <span>智能硬件</span><span></span></a>
+							</li>
+							<li class="nav-item">
+								<a class="link" href="#"><span>服务</span></a>
+							</li>
+							<li class="nav-item">
+								<a class="link" href="#"><span>社区</span></a>
+							</li>
+					</ul>
+				</div>
+				<div class="header-search">
+					<form id="search-form" class="search-form clearfix" action="" method="get">
+						<label for="search" class="hide">站内搜索</label>
+						<input class="search-text" type="search" id="search" name="keyword" autocomplete="off" />
+						<input type="submit" class="search-btn iconfont" value="">
+						<div class="search-hot-words">
+							<a href="#">小米MIX</a>
+							<a href="#">人工智能电视</a>
+						</div>
+						<div id="keyword-list" class="keyword-list hide">
+							<ul class="result-list"></ul>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="daohang">
+			<a href="index1.html">首页</a><span class="sep">/</span>
+			<a href="#">配件</a><span class="sep">/</span>
+			<a href="#">智能硬件配件</a><span class="sep">/</span>
+			<a href="#">小米水质TDS检测笔</a>
+		</div>
+		<div id="divProduct">
+			<div class="goods_left">
+				<ul>
+					<li><img src="img/Product/T1Z0b_BgWv1RXrhCrK!60x60.jpg"></li>
+					<li><img src="img/Product/T19OV_BgKT1RXrhCrK!60x60.jpg"></li>
+					<li><img src="img/Product/T1hEKgBQYT1RXrhCrK!60x60.jpg"></li>
+				</ul>
+			</div>
+			<div class="goods_center">
+				<img src="img/Product/T19OV_BgKT1RXrhCrK!482x482.jpg" />
+			</div>
+			<div class="goods_right">
+				<p id="goods_name"> 小米水质TDS检测笔 </p>
+				<p id="good_deali"> 准确检测家中水质纯度 让自己和家人喝上放心水 </p>
+				<p id="goods_price">35<span>元</span></p>
+				<p>
+					<a href="//cart.mi.com/cart/add/2152800032" id="goodsDetailAddCartBtn" class="btn  btn-primary goods-add-cart-btn" data-disabled="false" data-gid="2152800032" data-package="0"> <i class="iconfont"></i>加入购物车 </a>
+					<a id="goodsDetailCollectBtn" class=" btn btn-gray  goods-collect-btn " data-stat-id="9d1c11913f946c7f"> <i class="iconfont default"></i> <i class="iconfont red"></i><i class="iconfont red J_redCopy"></i>喜欢 </a>
+				</p>
+				<div id="good_help">
+					<ul>
+						<li> <i class="iconfont"></i> 评价<b>3.4万</b> </li>
+						<li> <i class="iconfont"></i> 提问<b>21</b> </li>
+						<li> <i class="iconfont"></i> 满意度<b>98.4%</b> </li>
+					</ul>
+				</div>
+				<div id="">
+					<a href="#">
+						<span class="iconfont"></span> 查看更多智能硬件配件
+					</a>
+				</div>
+			</div>
+		</div>
+		<div id="product-bar">
+			<ul class="detail-list">
+				<li class="current">
+					<a href="#" class="J_scrollHref">详情描述</a>
+				</li>
+				<li class="current">
+					<a href="#" class="J_scrollHref">规格参数</a>
+				</li>
+				<li class="current">
+					<a href="#" class="J_scrollHref">评价晒单 <i>(3.4万)</i></a>
+				</li>
+				<li>
+					<a data-href="#goodsFaq" class="J_scrollHref">商品提问 <i>(21)</i></a>
+				</li>
+			</ul>
+		</div>
+		<!--<div class="goods-sub-bar goods-sub-bar-play" id="goodsSubBar" style="top: 0px;">
+			<div class="container">
+				<div class="row">
+					<div class="span4">
+						<dl class="goods-sub-bar-info clearfix"> <dt> <img src="//i1.mifile.cn/a1/T19OV_BgKT1RXrhCrK!68x68.jpg"> </dt>
+							<dd> <strong>小米水质TDS检测笔</strong>
+								<p> <em><span class="J_mi_goodsPrice">39</span>元</em> <del><span class="J_mi_marketPrice"></span></del> </p>
+							</dd>
+						</dl>
+					</div>
+					<div class="span12">
+						<div class="goods-desc-menu" id="goodsSubMenu">
+							<ul class="detail-list J_pro_related_btns  J_detailNav">
+								<li class="current">
+									<a data-href="#goodsDesc" data-index="0" class="J_scrollHref" data-stat-id="3685f39a5a525288" onclick="_msq.push(['trackEvent', '39cfd3fe7c5ae9b3-3685f39a5a525288', '', 'pcpid']);">详情描述</a>
+								</li>
+								<li class="">
+									<a data-href="#goodsParam" data-index="1" class="J_scrollHref" data-stat-id="184521cfe28ee951" onclick="_msq.push(['trackEvent', '39cfd3fe7c5ae9b3-184521cfe28ee951', '', 'pcpid']);">规格参数</a>
+								</li>
+								<li class="">
+									<a data-href="#goodsComment" data-index="2" class="J_scrollHref" data-stat-id="117ed528bf11e03e" onclick="_msq.push(['trackEvent', '39cfd3fe7c5ae9b3-117ed528bf11e03e', '', 'pcpid']);">评价晒单 <i>(3.4万)</i></a>
+								</li>
+								<li>
+									<a data-href="#goodsFaq" data-index="3" class="J_scrollHref" data-stat-id="45857e9e45720d4f" onclick="_msq.push(['trackEvent', '39cfd3fe7c5ae9b3-45857e9e45720d4f', '', 'pcpid']);">商品提问 <i>(21)</i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="span4">
+						<div class="fr" id="goodsSubBarBtnBox">
+							<a href="//cart.mi.com/cart/add/2152800032" class="btn btn-primary goods-add-cart-btn" id="goodsSubBarAddCartBtn" data-disabled="false" data-gid="2152800032" data-package="0" data-stat-id="50939cd92e8f8304" onclick="_msq.push(['trackEvent', '39cfd3fe7c5ae9b3-50939cd92e8f8304', '//cart.mi.com/cart/add/2152800032', 'pcpid']);"> <i class="iconfont"></i>加入购物车</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>-->
+		<div class="TDSjiancebi">
+			<img src="img/Product/TDSjiancebi_01.jpg" />
+		</div>
+		<div class="TDSjiancebi" style="height: 1122px;margin-top: 5px;">
+			<img src="img/Product/TDSjiancebi_02.jpg" />
+		</div>
+		<div class="TDSjiancebi" style="height: 657px;margin-top: 5px;">
+			<img src="img/Product/TDSjiancebi_03.jpg" />
+		</div>
+		<div class="TDSjiancebi" style="height: 902px;margin-top: 5px;">
+			<img src="img/Product/TDSjiancebi_04.jpg" />
+		</div>
+		<div class="TDSjiancebi" style="height: 1722px;margin-top: 5px;">
+			<img src="img/Product/TDS.jpg" />
+		</div>
+		<div class="TDSjiancebi" style="height: 129px;margin-top: 5px;margin-bottom: 40px;">
+			<img src="img/Product/TDSzjt.jpg" />
+		</div>
+		<div class="footer" style="background-color: #FFFFFF;">
+			<div class="container">
+				<div class="footer-service">
+					<ul class="list-service clearfix">
+						<li>
+							<a href="#"><i class="iconfont">&#xe634;</i>预约维修服务</a>
+						</li>
+						<li>
+							<a href="#"><i class="iconfont">&#xe635;</i>7天无理由退货</a>
+						</li>
+						<li>
+							<a href="#"><i class="iconfont">&#xe636;</i>15天免费换货</a>
+						</li>
+						<li>
+							<a href="#"><i class="iconfont">&#xe638;</i>满150元包邮</a>
+						</li>
+						<li>
+							<a href="#"><i class="iconfont">&#xe637;</i>520余家售后网点</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer-links clearfix">
+					<dl class="col-links cl-first">
+						<dt>帮助中心</dt>
+						<dd>
+							<a href="#">账户管理</a>
+						</dd>
+						<dd>
+							<a href="#">购物指南</a>
+						</dd>
+						<dd>
+							<a href="#">订单操作</a>
+						</dd>
+					</dl>
+					<dl class="col-links">
+						<dt>服务支持</dt>
+						<dd>
+							<a href="#">售后政策</a>
+						</dd>
+						<dd>
+							<a href="#">自助服务</a>
+						</dd>
+						<dd>
+							<a href="#">相关下载</a>
+						</dd>
+					</dl>
+					<dl class="col-links">
+						<dt>线下门店</dt>
+						<dd>
+							<a href="#">小米之家</a>
+						</dd>
+						<dd>
+							<a href="#">服务网点</a>
+						</dd>
+						<dd>
+							<a href="#">零售网点</a>
+						</dd>
+					</dl>
+					<dl class="col-links">
+						<dt>关于小米</dt>
+						<dd>
+							<a href="#">了解小米</a>
+						</dd>
+						<dd>
+							<a href="#">加入小米</a>
+						</dd>
+						<dd>
+							<a href="#">联系我们</a>
+						</dd>
+					</dl>
+					<dl class="col-links">
+						<dt>关注我们</dt>
+						<dd>
+							<a href="#">新浪微博</a>
+						</dd>
+						<dd>
+							<a href="#">小米部落</a>
+						</dd>
+						<dd>
+							<a href="#">官方微信</a>
+						</dd>
+					</dl>
+					<dl class="col-links">
+						<dt>特色服务</dt>
+						<dd>
+							<a href="#">F 码通道</a>
+						</dd>
+						<dd>
+							<a href="#">小米移动</a>
+						</dd>
+						<dd>
+							<a href="#">防伪查询</a>
+						</dd>
+					</dl>
+					<div class="col-contact">
+						<p class="phone">400-100-5678</p>
+						<p>
+							<span style="">周一至周日 8:00-18:00</span>
+							<span style="display:none;">2月7日至13日服务时间 9:00-18:00</span>
+							<br>（仅收市话费）
+						</p>
+						<a class="btn btn-line-primary btn-small" href="#"><i class="iconfont">&#xe600;</i> 24小时在线客服</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="infos">
+			<div class="container">
+				<div class="logo ir">小米官网</div>
+				<div class="info-text">
+					<p class="sites">
+						<a href="#">小米商城</a><span>|</span>
+						<a href="#">MIUI</a> <span>|</span>
+						<a href="#">米聊</a><span>|</span>
+						<a href="#">多看书城</a><span>|</span>
+						<a href="#">小米路由器</a><span>|</span>
+						<a href="#">视频电话</a><span>|</span>
+						<a href="#">小米后院</a><span>|</span>
+						<a href="#">小米天猫店</a><span>|</span>
+						<a href="#">小米淘宝直营店</a><span>|</span>
+						<a href="#">小米网盟</a><span>|</span>
+						<a href="#">问题反馈</a><span>|</span>
+						<a href="#">Select Region</a>
+					</p>
+					<p>
+						<a href="#" title="mi.com">mi.com</a> 京ICP证110507号
+						<a href="#">京ICP备10046444号</a>
+						<a href="#">京公网安备11010802020134号 </a>
+						<a href="#">京网文[2014]0059-0009号</a><br>违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
+				</div>
+				<div class="info-links">
+					<a href="#"> <img src="img1/seal.png" alt=""></a>
+					<a href="#"> <img src="img1/v-logo-2.png" alt=""></a>
+					<a href="#"> <img src="img1/v-logo-1.png" alt=""></a>
+					<a href="#"> <img src="img1/v-logo-3.png" alt=""></a>
+				</div>
+			</div>
+			<div class="slogan ir">探索黑科技，小米为发烧而生</div>
+		</div>
+	</body>
+
+</html>
